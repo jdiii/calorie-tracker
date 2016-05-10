@@ -23,23 +23,21 @@
 			<div class="food__general">
 				<div>
 					<span class="food__general__header"><%= name %></span>
-					<span class="food__general__sub-hide"><%= brand ? brand + ',' : '' %></span>
-					<span class="food__general__sub-hide"><%= servings + ' ' + unit %></span>
+					<span class="food__general__sub-hide"><%= brand %></span>
 				</div>
 				<span class="food__general__header food__general__right"><%= calories %> cals</span>
 			</div>
 			<div class="food__detail">
-				<span class="food__detail__sub-hide"><%= calories_per_serving_size %> cal per <%= serving_size + ' ' + unit %></span>
-				<span class="food__detail__sub-hide"></span>
-				<span class="food__detail__sub"><%= dateString %></span>
+				<span class="food__detail__sub"><%= calories_per_serving_size %> cal per <%= serving_size + ' ' + unit %></span>
+				<span class="food__general__sub"><%= servings + ' ' + unit %></span>
 			</div>
 		</script>
 
 		<script type="text/template" id="search-view-template">
 
-			<header class="search-view__header">Add a Meal To The Tracker</header>
+			<header class="search-view__header">What did you eat today?</header>
 			<div class="search">
-				<input class="search__input" type=text value="What did you eat?"></input>
+				<input class="search__input" type=text value="Search for a food..."></input>
 				<span class="search__status"></span>
 				<div class="search__auto-complete"></div>
 			</div>

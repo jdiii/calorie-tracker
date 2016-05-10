@@ -24,7 +24,7 @@ var SearchView = Backbone.View.extend({
 	clearInput: function(){
 		var input = $('.search__input');
 		var inputVal = input.val();
-		if(inputVal == 'What did you eat?'){
+		if(inputVal == 'Search for a food...'){
 			input.val('');
 		}
 	},
