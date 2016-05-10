@@ -1,0 +1,342 @@
+/* *
+* http://www.colourlovers.com/palette/2562636/Christina
+* dark purple: rgb(78,57,93)
+* light purple: rgb(130,112,133)
+* green: rgb(142,190,148)
+* bright green: rgb(204,252,142)
+* red: rgb(220,91,62)
+*/
+
+body {
+	font-family: 'Ropa Sans', sans-serif;
+	font-weight: 400;
+	padding: 0;
+	margin: auto 0;
+	background-color: rgb(78,57,93);
+	color: white;
+	font-size: 1em;
+	box-sizing: border-box;
+}
+
+/* reset lists */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu */
+.menu {
+	display: flex;
+	padding: 1em 1em;
+	font-size: 2em;
+	justify-content: flex-start;
+	align-items: center;
+	max-width:960px;
+	margin: 0 auto;
+}
+
+.menu-container {
+	background-color: rgb(130,112,133);
+}
+
+.menu__menu-item {
+	margin:0;
+	margin-right: 1em;
+}
+
+a.menu__menu-item {
+	background:transparent;
+	border: 0;
+	border-bottom:0.25em solid rgb(142,190,148);
+	font-size: 0.8em;
+	color: rgb(142,190,148);
+	cursor: pointer;
+}
+a.menu__menu-item:hover {
+	color: rgb(204,252,142);
+	border-bottom:0.25em solid rgb(204,252,142);
+}
+
+/* Food List */
+
+.food__food-item {
+	margin:0 auto;
+	padding: 1em 0.5em;
+	font-size:1.0em;
+	list-style: none;
+	border-bottom: 0.1em rgb(130,112,133) solid;
+	/*color: rgb(130,112,133)*/
+	color: rgb(142,190,148);
+	max-width:960px;
+}
+
+.food__food-item__empty {
+	text-align: center;
+	font-size: 1.5em;
+	border: none;
+	color:white;
+	padding: 2em;
+}
+
+.food__food-item:hover {
+	/*border-color: rgb(142,190,148);*/
+	/*color: rgb(142,190,148)*/
+	color: rgb(204,252,142);
+}
+
+.food__food-item__day {
+	border-bottom: none;
+	text-align: center;
+	color: white;
+	font-size: 1.5em;
+	padding-bottom: 0;
+	margin-top: 1.5em;
+
+}
+.food__food-item__day:first-of-type {
+	margin-top:0em;
+}
+
+.food__general__header {
+	color:white;
+}
+
+.food__general__right {
+	text-align:right;
+}
+
+.food__general, .food__detail {
+	display: flex;
+	justify-content: space-between;
+}
+
+.food__general__header {
+	font-size:2.0em;
+}
+.food__general__sub,
+.food__general__sub-hide,
+.food__detail__sub,
+.food__detail__sub-hide {
+	font-size:1.2em;
+}
+
+/* animate newly added pizzas */
+@keyframes highlight {
+    from {background-color: rgb(142,190,148)}
+    to {background-color: transparent}
+}
+.highlight {
+	background: transparent;
+	animation-name: highlight;
+    animation-duration: 2s;
+}
+
+/* Search screen and results */
+.search-view {
+	margin:0 auto;
+	padding: 1em 0.5em;
+	font-size:1.0em;
+	color: rgb(142,190,148);
+	max-width:960px;
+}
+.search-view__header {
+	margin-top:1em;
+	display: block;
+	font-size:2em;
+	color:white;
+	text-align:center;
+}
+
+.search {
+	text-align:center;
+}
+
+
+.search__input {
+	border: 0.2em rgb(142,190,148) solid;
+	border-radius: 0.5em;
+	background-color: rgb(130,112,133);
+	color: white;
+	font-size: 2.5em;
+	padding: 0.1em;
+	font-family: inherit;
+	max-width:100%;
+	box-sizing: border-box;
+}
+.search__status {
+	display: block;
+	font-size: 2em;
+}
+
+.search__popup {
+	margin: 0 auto;
+	padding: 0;
+	transition: 0.5s;
+}
+.search__result {
+	margin: 0.1em auto;
+	padding: 0.5em;
+	max-width:600px;
+	font-size:1.5em;
+	list-style: none;
+	border: 0.15em rgb(142,190,148) solid;
+	border-radius: 0.2em;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	text-align: left;
+	cursor: pointer
+}
+.search__result:hover {
+	background-color: rgb(130,112,133);
+}
+.search__result-component__right {
+	text-align: right;
+}
+.search__result-sub {
+	font-size: 0.75em;
+	color: rgb(142,190,148);
+}
+.search__result-component {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Add food item screen */
+
+.add {
+	margin:0 auto;
+	padding: 1em 0.5em;
+	font-size:1.0em;
+	color: rgb(142,190,148);
+	max-width:960px;
+	text-align: center
+}
+.add__result {
+	display:flex;
+	flex-direction: column;
+	justify-content:flex-start;
+	align-items: center;
+	width:100%;
+	margin: 2em 1em 0 0;
+	font-size: 2.0em;
+}
+
+.add__input {
+	margin: 0.5em auto;
+	display: flex;
+	flex-direction: row;
+	justify-content:center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.add__input-box {
+	display: flex;
+	flex-direction: column-reverse;
+	margin: 0.5em;
+}
+
+.add__result-name, .add__result-header, .add__result-brand {
+	color: white;
+}
+.add__result-name {
+	font-size: 1.5em;
+}
+
+.add__input-box__field {
+	border: 0.1em rgb(142,190,148) solid;
+	border-radius: 0.25em;
+	background-color: rgb(130,112,133);
+	color: white;
+	font-size: 1.5em;
+	padding: 0.1em;
+	font-family: inherit;
+	max-width:100%;
+	box-sizing: border-box;
+	text-align: center;
+}
+.add__input-box__field.error {
+	border-color:rgb(220,91,62);
+}
+
+.add__total-cals__value {
+	color:white;
+	font-size:2.5em;
+}
+
+.add__save {
+	font-size:3em;
+	display:flex;
+	flex-direction: column;
+	align-items:center;
+}
+.add__save-message {
+	font-size: 0.5em;
+	color: rgb(220,91,62);
+}
+
+.add__button {
+	max-width: 320px;
+	margin: 0.25em;
+	background:transparent;
+	padding: 0.2em 0.5em;
+	border-radius: 0.25em;
+	border:0.1em solid rgb(142,190,148);
+	font-size: 0.8em;
+	color: rgb(142,190,148);
+	cursor: pointer;
+}
+.add__button:hover {
+	color: rgb(204,252,142);
+	border:0.1em solid rgb(204,252,142);
+}
+.add__reset-button {
+	width: auto;
+	color:rgb(130,112,133);
+	border-color:rgb(130,112,133);
+	font-size:0.5em;
+}
+
+
+@media screen and (max-width: 600px){
+	.menu {
+		font-size: 1.25em;
+	}
+	.menu__menu-item {
+		/*margin-right: 0.5em;*/
+	}
+	.food__food-item {
+		font-size: 0.75em;
+	}
+	.food__food-item__day {
+		font-size:1.5em;
+	}
+	.food__general {
+		font-size:0.75em;
+	}
+	.food__detail {
+		font-size:1em;
+	}
+	.food__detail__sub-hide, .food__general__sub-hide {
+		display:none;
+		color: red;
+	}
+	.search-view__header {
+		margin-top: 1em;
+	}
+	.search__input {
+		font-size:2em;
+		width:100%
+	}
+	.search__result {
+		font-size:1.25em;
+	}
+	.food__food-item__empty {
+		font-size:2em;
+	}
+	.add__result {
+		margin-top:1em;
+		font-size:1.2em;
+	}
+}

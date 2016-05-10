@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<title>Health Track</title>
+		<link href='https://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic' rel='stylesheet' type='text/css'>
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<div class="menu-container">
+			<section class=menu></section>
+		</div>
+
+		<section class="app">
+			<header></header>
+			<section class="app-view"></section>
+		</section>
+
+		<script type="text/template" id="food-template">
+			<div class="food__general">
+				<div>
+					<span class="food__general__header"><%= name %></span>
+					<span class="food__general__sub-hide"><%= brand ? brand + ',' : '' %></span>
+					<span class="food__general__sub-hide"><%= servings + ' ' + unit %></span>
+				</div>
+				<span class="food__general__header food__general__right"><%= calories %> cals</span>
+			</div>
+			<div class="food__detail">
+				<span class="food__detail__sub-hide"><%= calories_per_serving_size %> cal per <%= serving_size + ' ' + unit %></span>
+				<span class="food__detail__sub-hide"></span>
+				<span class="food__detail__sub"><%= dateString %></span>
+			</div>
+		</script>
+
+		<script type="text/template" id="search-view-template">
+
+			<header class="search-view__header">Add a Meal To The Tracker</header>
+			<div class="search">
+				<input class="search__input" type=text value="What did you eat?"></input>
+				<span class="search__status"></span>
+				<div class="search__auto-complete"></div>
+			</div>
+
+		</script>
+
+		<script type="text/template" id="search-result-template">
+			<div class="search__result-component">
+				<span class="search__result-header"><%= name %></span>
+				<span class="search__result-sub"><%= brand %></span>
+			</div>
+			<div class="search__result-component search__result-component__right">
+				<span class="search__result-header"><%= calories %> cals</span>
+				<span class="search__result-sub">per <%= serving_size %> <%= serving_size_units %></span>
+			</div>
+		</script>
+
+		<script type="text/template" id="menu-item-template">
+			<%= content %>
+		</script>
+
+		<script type="text/template" id="confirm-view-template">
+			<div class="add__result">
+				<span class="add__result-name"><%= name %></span>
+				<div>
+					<span class="add__result-brand"><%= brand %></span>
+					<span class="add__result-calories"><%= calories %> calories per <%= serving_size %> <%= serving_size_units %></span>
+				</div>
+			</div>
+			<div class="add__input">
+				<div class="add__input-box">
+					<label class="add__result-header">Servings</label>
+					<input class="add__input-box__field add__input__servings-input" type=text value="1">
+				</div>
+				<div class="add__input-box">
+					<label class="add__result-header">Date (YYYY/MM/DD)</label>
+					<input class="add__input-box__field add__input__date-input" type="text" value="<%= new Date(Date.now()).yyyymmdd()%>">
+				</div>
+			</div>
+			<div class="add__total-cals add__input-box">
+				<span class="add__total-cals__label">total calories</span>
+				<span class="add__total-cals__value"></span>
+			</div>
+			<div class="add__save">
+				<span class="add__save-message"></span>
+				<div class="add__save-button add__button">Save</div>
+				<div class="add__reset-button add__button">Reset</div>
+			</div>
+		</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
+		<script src="js/view/app.js"></script>
+		<script src="js/view/food.js"></script>
+		<script src="js/view/menu.js"></script>
+		<script src="js/view/search.js"></script>
+		<script src="js/model/models.js"></script>
+		<script src="js/collection/collections.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+
+</html>
